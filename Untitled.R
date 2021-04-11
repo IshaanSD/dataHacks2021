@@ -1,0 +1,5 @@
+install.packages("pvclust")
+library(pvclust)
+tf_idf <- read.csv('tf_idf.csv')
+tf_idf <- read.table("tf_idf.csv", sep = ",", header = T,stringsAsFactors = T,row.names = 1, comment.char = "", nrows = 8)
+result <- pvclust(tf_idf, method.dist="cor", method.hclust="average", nboot=1000, parallel=TRUE)
